@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .container-fluid(style="margin-top:2%;")
+    .jumbotron
+
+      p These are two simple tools to help you calculate volumetric doses.
+
+      h2 Volume
+
+      .form-inline
+        .form-group
+          label.control-label For a solution with&nbsp;
+          input.form-control#perml(type='text' style="width:70px; height:30px;" value="0") 
+        .form-group
+          label.control-label mg/ml, add&nbsp; 
+          input.span.form-control#total(type='text' style="width:70px; height:30px;" value="0") 
+        .form-group
+          label.control-label mg to&nbsp;
+          input.span.form-control#ml(type='text' disabled="true" style="width:70px; height:30px;" value="0") 
+          label.control-label ml
+
+      h2 Per ML
+
+        .form-inline
+          .form-group
+            label.control-label If you put&nbsp;
+            input.form-control#material(type='text' style="width:70px; height:30px;" value="0") 
+          .form-group
+            label.control-label mg in&nbsp; 
+            input.span.form-control#totalml(type='text' style="width:70px; height:30px;" value="0") 
+          .form-group
+            label.control-label ml of solution, it will be&nbsp;
+            input.span.form-control#mgml(type='text' disabled="true" style="width:70px; height:30px;" value="0") 
+            label.control-label mg/ml

@@ -1,0 +1,34 @@
+doctype html
+html
+  head 
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery-2.1.3.min.js')
+    script(src='/javascripts/volume.js')
+    title TripSit Volumetric Dosing Aid
+  body
+    .navbar.navbar-inverse.navbar-static-top(role='navigation',style="padding:0;margin:0")
+      center
+        a(href='/')
+          img.img-responsive(src='/images/chat-banner.png',style="padding:0;margin:0;width:100%;")
+      ul.nav.navbar-nav.navbar-right.top-nav(style="padding:0;margin:0")
+        li.choice
+          a(href='http://tripsit.me/about') About TripSit
+        li.choice
+          a(href='http://tripsit.me/contact-us') Contact Us
+        li.choice
+          a(href='http://drugs.tripsit.me/') Factsheets
+        li.choice
+          a(href='http://wiki.tripsit.me/') Wiki
+        li.choice
+          a(href='https://play.google.com/store/apps/details?id=me.tripsit.tripmobile') Mobile App
+        li.choice
+          a(href='http://tripsit.me/chat-overview/') Chat Overview
+        li.choice
+         a(href='http://tripsit.me/donate/') Donate
+    block content
