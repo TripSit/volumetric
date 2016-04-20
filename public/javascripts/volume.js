@@ -7,7 +7,11 @@ $(function() {
 });
 
 function fixInput(input) {
-  return input.replace(/,/, '.'); 
+  input = input.replace(/,/, '.'); 
+  if(input.indexOf('-') != -1) {
+    input = NaN;
+  }
+  return input;
 }
 
 function updateVolume() {
