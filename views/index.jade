@@ -4,9 +4,14 @@ block content
   .container-fluid(style="margin-top:2%;")
     .jumbotron
 
-      p These are two simple tools to help you calculate volumetric doses.
+      p These are two simple tools to help you calculate volumetric doses. Volumetric dosing is a way of measuring a substance
+        | by dissolving a known amount of it in a known amount of liquid, then by doing so you are able to relatively accurately 
+        | measure a dose by measuring
+        | the liquid. You can find out more about volumetric dosing, and how to do it 
+        a(href="https://wiki.tripsit.me/wiki/Quick_Guide_to_Volumetric_Dosing") here
+        span .
 
-      h2 Volume
+      h2 How much solution do you need?
 
       .form-inline
         .form-group
@@ -20,7 +25,8 @@ block content
           input.span.form-control#ml(type='text' disabled="true" style="width:70px; height:30px;" value="0") 
           label.control-label ml
 
-      h2 Per ML
+      h2 What will your mg/ml be?
+      span
 
         .form-inline
           .form-group

@@ -6,8 +6,12 @@ $(function() {
   $('#totalml').on('input', updatePerml);
 });
 
+function fixInput(input) {
+  return input.replace(/,/, '.'); 
+}
+
 function updateVolume() {
-  var res = parseInt($('#total').val()) / parseInt($('#perml').val())
+  var res = parseFloat(fixInput($('#total').val())) / parseFloat(fixInput($('#perml').val()));
   if(isNaN(res)) {
     res = 'Input error';
   }
@@ -15,7 +19,7 @@ function updateVolume() {
 }
 
 function updatePerml() {
-  var res = parseInt($('#material').val()) / parseInt($('#totalml').val())
+  var res = parseFloat(fixInput($('#material').val())) / parseFloat(fixInput($('#totalml').val()));
   if(isNaN(res)) {
     res = 'Input error';
   }

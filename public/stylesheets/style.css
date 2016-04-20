@@ -284,3 +284,8 @@ border-color:#FFFF9D;
 .label-habit {
   background-color: #e67e22;
 }
+
+.jumbotron p {
+line-height: 150%;
+font-size: 16px
+}
