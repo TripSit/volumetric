@@ -125,7 +125,7 @@ color: white;
 
 
 .control-label {
-font-size: 20px;
+font-size: 15px;
 font-weight: normal;
 }
 /*
@@ -287,5 +287,5 @@ border-color:#FFFF9D;
 
 .jumbotron p {
 line-height: 150%;
-font-size: 16px
+font-size: 12px
 }

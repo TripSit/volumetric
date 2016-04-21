@@ -4,14 +4,14 @@ block content
   .container-fluid(style="margin-top:2%;")
     .jumbotron
 
-      p These are two simple tools to help you calculate volumetric doses. Volumetric dosing is a way of measuring a substance
-        | by dissolving a known amount of it in a known amount of liquid, then by doing so you are able to relatively accurately 
+      p These are three simple tools to help you calculate volumetric doses. Volumetric dosing is a way of measuring a substance
+        | by dissolving a known amount of it in a known amount of liquid, usually water (known as the solvent), then by doing so you are able to relatively accurately 
         | measure a dose by measuring
-        | the liquid. You can find out more about volumetric dosing, and how to do it 
+        | the solution. You can find out more about volumetric dosing, and how to do it 
         a(href="https://wiki.tripsit.me/wiki/Quick_Guide_to_Volumetric_Dosing") here
-        span .
+        span . We highly recommend labelling your solutions with their substance and concentration, once you've made them.
 
-      h2 How much solution do you need?
+      h3 How much solvent (water) do you need?
 
       .form-inline
         .form-group
@@ -21,11 +21,12 @@ block content
           label.control-label mg/ml, add&nbsp; 
           input.span.form-control#total(type='text' style="width:70px; height:30px;" value="0") 
         .form-group
-          label.control-label mg to&nbsp;
-          input.span.form-control#ml(type='text' disabled="true" style="width:70px; height:30px;" value="0") 
-          label.control-label ml
+          label.control-label mg of the substance to&nbsp;
+          input.span.form-control#ml(type='text' disabled="true" style="width:70px; height:30px;" value="") 
+          label.control-label ml of solvent.
+      button.btn.btn-default#mlcopy Copy
 
-      h2 What will your mg/ml be?
+      h3 What will the concentration of the solution be (mg/ml)?
       span
 
         .form-inline
@@ -33,12 +34,33 @@ block content
             label.control-label If you put&nbsp;
             input.form-control#material(type='text' style="width:70px; height:30px;" value="0") 
           .form-group
-            label.control-label mg in&nbsp; 
+            label.control-label mg of a substance in&nbsp; 
             input.span.form-control#totalml(type='text' style="width:70px; height:30px;" value="0") 
           .form-group
-            label.control-label ml of solution, it will be&nbsp;
-            input.span.form-control#mgml(type='text' disabled="true" style="width:70px; height:30px;" value="0") 
-            label.control-label mg/ml
+            label.control-label ml of solvent, it will be&nbsp;
+            input.span.form-control#mgml(type='text' disabled="true" style="width:70px; height:30px;" value="") 
+            label.control-label mg/ml.
+        button.btn.btn-default#mgmlcopy Copy
+
+      h3 How much do you want to take?
+      span
+
+        .form-inline
+          .form-group
+            label.control-label If you have a solution of&nbsp;
+            input.form-control#tmgml(type='text' style="width:70px; height:30px;" value="0") 
+          .form-group
+            label.control-label mg/ml, and want to take&nbsp; 
+            input.span.form-control#wanttake(type='text' style="width:70px; height:30px;" value="0") 
+          .form-group
+            label.control-label mg, you need to take&nbsp;
+            input.span.form-control#taketotal(type='text' disabled="true" style="width:70px; height:30px;" value="") 
+            label.control-label ml.
+        button.btn.btn-default#takecopy Copy
+
+
+
+
       p
       p Please note, these tools were developed and tested to the best possible ability by the TripSit team, and the greatest effort has been made not to produce incorrect or misleading results, though for unforeseen reasons these may occur. Always check your maths, and be careful. If you have any questions, suggestions or error reports on this tool, you can contact us 
         a(href="http://tripsit.me/contact-us/") here
