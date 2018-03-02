@@ -1,4 +1,4 @@
-body {                                                                                                                         
+body {
   padding-bottom: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height:120%;
@@ -44,7 +44,7 @@ color: white;
 }
 
 .navbar-right {
-  margin-top: 20px;
+  
   margin-right: 5px;
 }
 
@@ -85,7 +85,7 @@ color: white;
     display:block;
   }
 }
- 
+
 
 /* Sidebar navigation */
 .nav-sidebar {
@@ -166,7 +166,7 @@ background-color:#eeeeee;
 .bs-callout .highlight {
   background-color: #fff;
 }
- 
+
 .bs-callout-caution {
   background-color: #fffacb;
   border-color: #827700;
