@@ -2,6 +2,8 @@
 var debug = require('debug')('volumetric');
 var app = require('../app');
 
+console.log('Starting app!')
+
 app.set('port', process.env.PORT || 9087);
 
 var server = app.listen(app.get('port'), function() {

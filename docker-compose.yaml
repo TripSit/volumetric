@@ -1,0 +1,52 @@
+version: '3.9'
+
+name: apps
+
+########################### EXTENSION FIELDS
+# Common environment values
+x-environment: &default-tz-puid-pgid
+  TZ: 'America/Chicago'
+  PUID: '1000'
+  PGID: '1000'
+
+# Keys common to some of the dependent services/apps
+x-common-keys-apps: &common-keys-apps
+  security_opt:
+    - no-new-privileges:true
+  restart: unless-stopped
+
+########################### SERVICES
+services:
+  calculator_volume:
+    <<: *common-keys-apps
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: calculator_volume
+    working_dir: /usr/src/app
+    environment:
+      <<: *default-tz-puid-pgid
+    networks:
+      - calculator_volume-net
+    labels:
+    - com.centurylinklabs.watchtower.enable=true
+    - traefik.enable=true
+    - traefik.docker.network=calculator_volume-net
+    - traefik.http.services.calculator_volume-svc.loadbalancer.server.port=9087
+
+    - traefik.http.routers.calculator_volume-cloudflare.rule=Host(`volume.tripsit.io`)
+    - traefik.http.routers.calculator_volume-cloudflare.entrypoints=websecure
+    - traefik.http.routers.calculator_volume-cloudflare.tls.certresolver=letsencrypt
+    - traefik.http.routers.calculator_volume-cloudflare.service=calculator_volume-svc
+    - traefik.http.routers.calculator_volume-cloudflare.middlewares=default@file
+      
+    - traefik.http.routers.calculator_volume-namecheap.rule=Host(`volume.tripsit.me`)
+    - traefik.http.routers.calculator_volume-namecheap.entrypoints=websecure
+    - traefik.http.routers.calculator_volume-namecheap.tls.certresolver=letsencrypt-legacy
+    - traefik.http.routers.calculator_volume-namecheap.service=calculator_volume-svc
+    - traefik.http.routers.calculator_volume-namecheap.middlewares=default@file
+    command: node ./bin/www
+
+networks:
+  calculator_volume-net:
+    name: calculator_volume-net

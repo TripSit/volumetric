@@ -1,9 +1,25 @@
 {
-  "name": "volumetric",
-  "version": "0.0.0",
+  "name": "Volume Converter",
+  "version": "1.0.0",
+  "description": "A simple volume converter.",
+  "homepage": "https://volume.tripsit.me",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "docker compose --project-name apps up -d --force-recreate --build",
+    "## Docker": "",
+    "logs": "docker container logs calculator_benzos -f -n 100",
+    "test": "docker exec -it calculator_benzos npm run local:test",
+    "lint": "docker exec -it calculator_benzos npm run local:lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TripSit/volumetric.git"
+  },
+  "author": "bjorn",
+  "maintainers": ["Eric Moonbear/Teknos"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TripSit/volumetric/issues"
   },
   "dependencies": {
     "express": "~4.9.0",
