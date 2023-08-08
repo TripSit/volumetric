@@ -39,12 +39,6 @@ services:
     - traefik.http.routers.calculator_volume-cloudflare.tls.certresolver=letsencrypt
     - traefik.http.routers.calculator_volume-cloudflare.service=calculator_volume-svc
     - traefik.http.routers.calculator_volume-cloudflare.middlewares=default@file
-      
-    - traefik.http.routers.calculator_volume-namecheap.rule=Host(`volume.tripsit.me`)
-    - traefik.http.routers.calculator_volume-namecheap.entrypoints=websecure
-    - traefik.http.routers.calculator_volume-namecheap.tls.certresolver=letsencrypt-legacy
-    - traefik.http.routers.calculator_volume-namecheap.service=calculator_volume-svc
-    - traefik.http.routers.calculator_volume-namecheap.middlewares=default@file
     command: node ./bin/www
 
 networks:
